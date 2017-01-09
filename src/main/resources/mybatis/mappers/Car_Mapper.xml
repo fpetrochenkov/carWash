@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.java.com.roxoft.dao.ICarDao">
+
+	<resultMap id="CarResultMap" type="Car">
+		<result column="model" property="model" />
+		<association property="user" javaType="User">
+			<result column="name" property="name" />
+			<association property="tariff" javaType="Tariff">
+				<result column="description" property="description" />
+			</association>
+		</association>
+		<association property="insurance" javaType="Insurance">
+		<result column="cost" property="cost" />
+		<result column="exp_date" property="exp_date" />
+		</association>
+	</resultMap>
+
+	<select id="getAll" resultMap="CarResultMap">
+		SELECT model, name, description, cost, exp_date FROM cars
+		INNER JOIN users ON users.id = user
+		INNER JOIN tariffs ON tariffs.id = users.tariff
+		INNER JOIN insurance ON insurance.id = insurance
+	</select>
+
+	<delete id="delete">
+		DELETE FROM cars
+		WHERE id= #{id}
+	</delete>
+
+	<insert id="insert">
+		INSERT IGNORE INTO cars (model, user, insurance) 
+		VALUES (#{model}, #{user}, #{insurance})
+	</insert>
+
+	<select id="getCarById" parameterType="int" resultMap="CarResultMap">
+		SELECT model, name, description, cost, exp_date FROM cars
+		INNER JOIN users ON users.id = user
+		INNER JOIN tariffs ON tariffs.id = users.tariff
+		INNER JOIN insurance ON insurance.id = insurance
+		WHERE cars.id = #{id}
+	</select>
+
+	<update id="update">
+		UPDATE cars 
+		SET model = 'Ferrari', user = '2', insurance = '3' 
+		WHERE id = #{id}
+	</update>
+
+</mapper>

@@ -1,0 +1,41 @@
+<cars>
+<car>
+  <model>Mersedes</model>
+  <user>
+    <name>Johny Bravo</name>
+    <tariff>
+      <description>100$ tariff</description>
+    </tariff>
+  </user>
+  <insurance>
+    <cost>100</cost>
+    <exp_date>01-2017</exp_date>
+  </insurance>
+</car>
+<car>
+  <model>BMW</model>
+  <user>
+    <name>Johny Sins</name>
+    <tariff>
+      <description>150$ tariff</description>
+    </tariff>
+  </user>
+  <insurance>
+    <cost>150</cost>
+    <exp_date>06-2017</exp_date>
+  </insurance>
+</car>
+<car>
+  <model>Bentley</model>
+  <user>
+    <name>Fil Petrochenkov</name>
+    <tariff>
+      <description>500$ tariff</description>
+    </tariff>
+  </user>
+  <insurance>
+    <cost>500</cost>
+    <exp_date>12-2017</exp_date>
+  </insurance>
+</car>
+</cars>

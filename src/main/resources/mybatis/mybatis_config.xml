@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<properties resource="database.properties">
+		<property name="username" value="username" />
+		<property name="password" value="password" />
+		<property name="url" value="url" />
+		<property name="driver" value="driver" />
+	</properties>
+
+	<typeAliases>
+		<typeAlias alias="Car" type="main.java.com.roxoft.model.Car" />
+		<typeAlias alias="Insurance" type="main.java.com.roxoft.model.Insurance" />
+		<typeAlias alias="Tariff" type="main.java.com.roxoft.model.Tariff" />
+		<typeAlias alias="User" type="main.java.com.roxoft.model.User" />
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="mybatis/mappers/Car_Mapper.xml" />
+		<mapper resource="mybatis/mappers/Insurance_Mapper.xml" />
+		<mapper resource="mybatis/mappers/Tariff_Mapper.xml" />
+		<mapper resource="mybatis/mappers/User_Mapper.xml" />
+	</mappers>
+
+</configuration>

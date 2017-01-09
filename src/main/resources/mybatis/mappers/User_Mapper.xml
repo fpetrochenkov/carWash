@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.java.com.roxoft.dao.IUserDao">
+
+	<resultMap id="UserResultMap" type="User">
+		<result column="name" property="name" />
+		<association property="tariff" javaType="Tariff">
+		<result column="description" property="description"/>
+		</association>
+	</resultMap>
+
+	<select id="getAll" resultMap="UserResultMap">
+		SELECT name, description FROM users
+		INNER JOIN tariffs on tariffs.id = tariff
+	</select>
+
+	<delete id="delete">
+		DELETE FROM users
+		WHERE id= #{id}
+	</delete>
+
+	<insert id="insert">
+		INSERT IGNORE INTO users (name, tariff) 
+		VALUES (#{name}, #{tariff})
+	</insert>
+
+	<select id="getUserById" parameterType="int" resultMap="UserResultMap">
+		SELECT name, description FROM users
+		INNER JOIN tariffs on tariffs.id = tariff
+		WHERE users.id = #{id}
+	</select>
+	
+	<update id="update">
+		UPDATE users 
+		SET name = 'Alex', tariff = '2' 
+		WHERE id = #{id}
+	</update>
+
+</mapper>

@@ -1,0 +1,42 @@
+{ "cars": [
+  {
+    "model": "Mersedes",
+    "user": {
+      "name": "Johny Bravo",
+      "tariff": {
+        "description": "100$ tariff"
+      }
+    },
+    "insurance": {
+      "cost": "100",
+      "exp_date": "01-2017"
+    }
+  },
+  {
+    "model": "BMW",
+    "user": {
+      "name": "Johny Sins",
+      "tariff": {
+        "description": "150$ tariff"
+      }
+    },
+    "insurance": {
+      "cost": "150",
+      "exp_date": "06-2017"
+    }
+  },
+  {
+    "model": "Bentley",
+    "user": {
+      "name": "Fil Petrochenkov",
+      "tariff": {
+        "description": "500$ tariff"
+      }
+    },
+    "insurance": {
+      "cost": "500",
+      "exp_date": "12-2017"
+    }
+  }
+]
+}
