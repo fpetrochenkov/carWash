@@ -9,6 +9,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import main.java.com.roxoft.dao.mybatis.CarDaoImpl;
 import main.java.com.roxoft.parsing.DOMBuilder;
+import main.java.com.roxoft.parsing.JDOM;
 import main.java.com.roxoft.parsing.Jackson;
 import main.java.com.roxoft.parsing.Jaxb;
 import main.java.com.roxoft.parsing.SAXBuilder;
@@ -21,38 +22,44 @@ public class Runner {
 
 	public static void main(String[] args) throws XMLStreamException, IOException {
 
+//		LOG.info("===========================================================================");
+//		Stax stax = new Stax();
+//		stax.buildSetCars("src\\main\\resources\\cars.xml");
+//		LOG.info(stax.getCars());
+//
+//		LOG.info("===========================================================================");
+//		Jaxb j = new Jaxb();
+//		j.jaxb();
+//		LOG.info("===========================================================================");
+//		try {
+//			Jackson jack = new Jackson();
+//			jack.jackson();
+//		} catch (JsonParseException e) {
+//			LOG.error("JsonParseException: ", e);
+//		} catch (JsonMappingException e) {
+//			LOG.error("JsonMappingException: ", e);
+//		}
+//		LOG.info("===========================================================================");
+//		Service service = new Service();
+//		service.fillDataBase();
+//		LOG.info("===========================================================================");
+//		CarDaoImpl c = new CarDaoImpl();
+//		LOG.info(c.getAll());
+//
+//		LOG.info("===========================================================================");
+//		DOMBuilder domBuilder = new DOMBuilder();
+//		domBuilder.buildSetCars("src\\main\\resources\\cars.xml");
+//		LOG.info(domBuilder.getCars());
+//
+//		LOG.info("===========================================================================");
+//		SAXBuilder saxBuilder = new SAXBuilder();
+//		saxBuilder.parseSAX();
+		
 		LOG.info("===========================================================================");
-		Stax stax = new Stax();
-		stax.buildSetCars("src\\main\\resources\\cars.xml");
-		LOG.info(stax.getCars());
-
-		LOG.info("===========================================================================");
-		Jaxb j = new Jaxb();
-		j.jaxb();
-		LOG.info("===========================================================================");
-		try {
-			Jackson jack = new Jackson();
-			jack.jackson();
-		} catch (JsonParseException e) {
-			LOG.error("JsonParseException: ", e);
-		} catch (JsonMappingException e) {
-			LOG.error("JsonMappingException: ", e);
-		}
-		LOG.info("===========================================================================");
-		Service service = new Service();
-		service.fillDataBase();
-		LOG.info("===========================================================================");
-		CarDaoImpl c = new CarDaoImpl();
-		LOG.info(c.getAll());
-
-		LOG.info("===========================================================================");
-		DOMBuilder domBuilder = new DOMBuilder();
-		domBuilder.buildSetCars("src\\main\\resources\\cars.xml");
-		LOG.info(domBuilder.getCars());
-
-		LOG.info("===========================================================================");
-		SAXBuilder saxBuilder = new SAXBuilder();
-		saxBuilder.parseSAX();
+		JDOM jdom = new JDOM();
+		jdom.parseJDOM();
+		
+		
 
 	}
 }
