@@ -14,6 +14,7 @@ import main.java.com.roxoft.parsing.Jackson;
 import main.java.com.roxoft.parsing.Jaxb;
 import main.java.com.roxoft.parsing.SAXBuilder;
 import main.java.com.roxoft.parsing.Stax;
+import main.java.com.roxoft.parsing.XPathParser;
 import main.java.com.roxoft.service.Service;
 
 public class Runner {
@@ -55,9 +56,13 @@ public class Runner {
 //		SAXBuilder saxBuilder = new SAXBuilder();
 //		saxBuilder.parseSAX();
 		
+//		LOG.info("===========================================================================");
+//		JDOM jdom = new JDOM();
+//		jdom.parseJDOM();
+		
 		LOG.info("===========================================================================");
-		JDOM jdom = new JDOM();
-		jdom.parseJDOM();
+		XPathParser xpath = new XPathParser();
+		xpath.parseXPath();
 		
 		
 
