@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import main.java.com.roxoft.dao.mybatis.CarDaoImpl;
+import main.java.com.roxoft.parsing.DOM4JParser;
 import main.java.com.roxoft.parsing.DOMBuilder;
 import main.java.com.roxoft.parsing.JDOM;
 import main.java.com.roxoft.parsing.Jackson;
@@ -60,9 +61,13 @@ public class Runner {
 //		JDOM jdom = new JDOM();
 //		jdom.parseJDOM();
 		
-		LOG.info("===========================================================================");
-		XPathParser xpath = new XPathParser();
-		xpath.parseXPath();
+//		LOG.info("===========================================================================");
+//		XPathParser xpath = new XPathParser();
+//		xpath.parseXPath();
+		
+//		LOG.info("===========================================================================");
+//		DOM4JParser parser = new DOM4JParser();
+//		parser.parseDOM4J();
 		
 		
 
